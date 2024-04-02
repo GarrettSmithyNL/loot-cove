@@ -1,6 +1,6 @@
 const games = [
   {
-    ID: 1,
+    id: 1,
     name: "Dead by Daylight",
     rating: {
       "5 stars": 120,
@@ -30,7 +30,7 @@ const games = [
     price: "$19.99",
   },
   {
-    ID: 2,
+    id: 2,
     name: "Five Nights at Freddy's",
     rating: {
       "5 stars": 150,
@@ -60,7 +60,7 @@ const games = [
     price: "$4.99",
   },
   {
-    ID: 3,
+    id: 3,
     name: "Phasmophobia",
     rating: {
       "5 stars": 180,
@@ -90,7 +90,7 @@ const games = [
     price: "$13.99",
   },
   {
-    ID: 4,
+    id: 4,
     name: "Resident Evil",
     rating: {
       "5 stars": 200,
@@ -120,7 +120,7 @@ const games = [
     price: "$19.99",
   },
   {
-    ID: 5,
+    id: 5,
     name: "Silent Hill",
     rating: {
       "5 stars": 180,
@@ -150,7 +150,7 @@ const games = [
     price: "$9.99",
   },
   {
-    ID: 6,
+    id: 6,
     name: "Stellaris",
     rating: {
       "5 stars": 250,
@@ -180,7 +180,7 @@ const games = [
     price: "$39.99",
   },
   {
-    ID: 7,
+    id: 7,
     name: "Europa Universalis 4",
     rating: {
       "5 stars": 300,
@@ -210,7 +210,7 @@ const games = [
     price: "$39.99",
   },
   {
-    ID: 8,
+    id: 8,
     name: "Hearts of Iron 4",
     rating: {
       "5 stars": 260,
@@ -240,7 +240,7 @@ const games = [
     price: "$39.99",
   },
   {
-    ID: 9,
+    id: 9,
     name: "Factorio",
     rating: {
       "5 stars": 230,
@@ -270,7 +270,7 @@ const games = [
     price: "$29.99",
   },
   {
-    ID: 10,
+    id: 10,
     name: "Crusader Kings 3",
     rating: {
       "5 stars": 240,
@@ -300,7 +300,7 @@ const games = [
     price: "$49.99",
   },
   {
-    ID: 11,
+    id: 11,
     name: "Skyrim",
     rating: {
       "5 stars": 280,
@@ -330,7 +330,7 @@ const games = [
     price: "$39.99",
   },
   {
-    ID: 12,
+    id: 12,
     name: "Elden Ring",
     rating: {
       "5 stars": 290,
@@ -360,7 +360,7 @@ const games = [
     price: "$59.99",
   },
   {
-    ID: 13,
+    id: 13,
     name: "Baldur's Gate 3",
     rating: {
       "5 stars": 270,
@@ -390,7 +390,7 @@ const games = [
     price: "$49.99",
   },
   {
-    ID: 14,
+    id: 14,
     name: "Path of Exile",
     rating: {
       "5 stars": 270,
@@ -420,7 +420,7 @@ const games = [
     price: "Free to Play",
   },
   {
-    ID: 15,
+    id: 15,
     name: "Dragon Age",
     rating: {
       "5 stars": 260,
@@ -450,7 +450,7 @@ const games = [
     price: "$29.99",
   },
   {
-    ID: 16,
+    id: 16,
     name: "Borderlands 2",
     rating: {
       "5 stars": 280,
@@ -480,7 +480,7 @@ const games = [
     price: "$19.99",
   },
   {
-    ID: 17,
+    id: 17,
     name: "PlayerUnknown's Battlegrounds (PUBG)",
     rating: {
       "5 stars": 270,
@@ -510,7 +510,7 @@ const games = [
     price: "$29.99",
   },
   {
-    ID: 18,
+    id: 18,
     name: "Call of Duty: Modern Warfare 2 (MW2)",
     rating: {
       "5 stars": 280,
@@ -540,7 +540,7 @@ const games = [
     price: "$19.99",
   },
   {
-    ID: 19,
+    id: 19,
     name: "Apex Legends",
     rating: {
       "5 stars": 290,
@@ -570,7 +570,7 @@ const games = [
     price: "Free to Play",
   },
   {
-    ID: 20,
+    id: 20,
     name: "The Finals",
     rating: {
       "5 stars": 290,
@@ -600,7 +600,7 @@ const games = [
     price: "$49.99",
   },
   {
-    ID: 21,
+    id: 21,
     name: "Fighter Z",
     rating: {
       "5 stars": 280,
@@ -630,7 +630,7 @@ const games = [
     price: "$39.99",
   },
   {
-    ID: 22,
+    id: 22,
     name: "Tekken 8",
     rating: {
       "5 stars": 280,
@@ -660,7 +660,7 @@ const games = [
     price: "$59.99",
   },
   {
-    ID: 23,
+    id: 23,
     name: "Street Fighter 5",
     rating: {
       "5 stars": 270,
@@ -690,7 +690,7 @@ const games = [
     price: "$39.99",
   },
   {
-    ID: 24,
+    id: 24,
     name: "Hyrule Warriors",
     rating: {
       "5 stars": 280,
@@ -720,7 +720,7 @@ const games = [
     price: "$49.99",
   },
   {
-    ID: 25,
+    id: 25,
     name: "Super Smash Bros",
     rating: {
       "5 stars": 290,
@@ -753,5 +753,5 @@ const games = [
 
 export const getGames = () => games;
 export const getGameById = (gameId) => {
-  games.find((game) => game.ID === gameId);
+  return games.find((game) => game.id === gameId);
 };
