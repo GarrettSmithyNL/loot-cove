@@ -1,11 +1,36 @@
 import "./App.css";
 import { useState, useEffect } from "react";
 import { getGameById, getGames } from "./data/api";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
-  console.log(getGames());
-  console.log(getGameById(3));
-  return <div className="App"></div>;
+  const games = getGames();
+  console.log(games);
+
+  return (
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <div>
+                <h1>Title: {games[1].name}</h1>
+              </div>
+            }
+          ></Route>
+          <Route
+            path="/2"
+            element={
+              <div>
+                <h1>Title: {games[2].name}</h1>
+              </div>
+            }
+          ></Route>
+        </Routes>
+      </div>
+    </Router>
+  );
 }
 
 export default App;
