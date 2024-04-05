@@ -1,8 +1,25 @@
+@font-face {
+  font-family: "MyFont";
+  src: url("D:\TheRumIsGone-Wy1nG.ttf");
+}
+
+* {
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+}
+
+.App {
+  width: 1440px;
+  min-height: 1600px;
+  max-height: auto;
+  margin: auto;
+  background: linear-gradient(to bottom, #B1F4FC,#449FAF);
+
+}
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "MyFont";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -11,3 +28,110 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+ /* Nav Bar stylings  */
+nav {
+  display: flex;
+  justify-content: space-between;
+  height: 125px;
+  align-items: center;
+  background-color: #F4D499;
+  border: solid 8px #835211;
+  font-size: 48px;
+  padding-left: 75px;
+}
+
+#genre {
+  font-size: 40px;
+  padding-left: 25px;
+}  
+
+.navBtns {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 20px;
+  padding-right: 60px;
+}
+
+.navBtns > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 20px;
+}
+
+.navBtns > div > p {
+  text-decoration: none;
+  padding-top: 10px;
+}
+
+/* Styles for Scroll box stylings */
+.FireSaleHead {
+  font-size: 48px;
+  text-align: center;
+  margin-top: 50px;
+
+}
+
+.scrollBox {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.fireSaleContainer {
+  display: flex;
+  max-width:auto;
+  overflow: scroll;
+  scroll-behavior: auto; /*set to auto because smooth seemed a bit choppy apon loading*/
+  height: 450px;
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
+  align-self: center;
+}
+
+
+.fireSaleImage {
+  width: 1440px;
+  height: 450px;
+}
+
+.nav-btn {
+  cursor: pointer;
+  background-color:#F4D499 ;
+  border-radius: 16px;
+  border: solid 5px #835211;
+  height: 450px;
+  width: 100px;
+}
+
+.fireSaleContainer::-webkit-scrollbar {
+  display: none; /* hides the scroll bar*/
+}
+
+.bar-container {
+  display: flex;
+  justify-content: space-between;
+  width: 590px;
+  height: auto;
+  background-color: #835211;
+  border: solid 5px black;
+  margin-left: 425px;
+  margin-top: 25px;
+  border-radius: 24px;
+}
+
+.barBox {
+  width: 160px;
+  height: 32px;
+  background-color: #fff; 
+  border-radius: 16px;
+  border: solid 5px black;
+}
+.barBox.active {
+  background-color: green;
+}
+
+
+
+
