@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { getGameById, getGames } from "./data/api";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
-import ScrollBox from "./components/ScrollBox";
+import HomePage from "./components/HomePage";
 
 function App() {
   const games = getGames();
@@ -21,8 +21,7 @@ function App() {
             path="/"
             element={
               <div>
-                <NavBar />
-                <ScrollBox /> 
+               <HomePage />
               </div>
               
              
@@ -34,6 +33,7 @@ function App() {
             element={
               <div>
                 <h1>Title: {games[2].name}</h1>
+                <NavBar />
               </div>
             }
           ></Route>

@@ -1,60 +1,57 @@
 import { useRef, useEffect, useState } from 'react';
+import { getGameById } from '../data/api.js'; // Replace './api' with the actual path to api.js
 
+// Alot of credit to this code goes too A dev named Aneeqa Khan, here is the link to their code that helped me out 
+// https://dev.to/aneeqakhan/building-an-image-slider-with-smooth-scrolling-using-react-1jdb
 const ScrollBox = () => {
   const sliderRef = useRef(null);
-  const scrollAmount = window.innerWidth; // Assuming each image takes up the full width of the window
+  const scrollAmount = window.innerWidth; // sets the scroll amount to a full window length
   const [selectedImage, setSelectedImage] = useState(2); // this makes it so that when the page loads that the program knows its image 2 so the bar is green in the center
-  const images = [
-    {
-        id: 1,
-        url: "https://plus.unsplash.com/premium_photo-1681882526882-c2da94c47783?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHVwcHl8ZW58MHx8MHx8fDA%3D",
-    },
-    {
-        id: 2,
-        url: "https://images.unsplash.com/photo-1546527868-ccb7ee7dfa6a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHVwcHl8ZW58MHx8MHx8fDA%3D"
-    },
-    {
-        id: 3,
-        url:"https://images.unsplash.com/photo-1600804340584-c7db2eacf0bf?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cHVwcHl8ZW58MHx8MHx8fDA%3D"
-    },
-];  
+  const gameIds = [5, 25, 15]; // specified 3 game id to display for the 3 images
+  const images = gameIds.map((gameId) => {
+    const game = getGameById(gameId);
+    if (game) {
+      return { id: game.id, url: game.pictures.thumbnail }; // Assuming each game has a 'pictures' object with a 'thumbnail' property
+    } else {
+      console.log(`No game found with ID ${gameId}`);
+      return null;
+    }
+  }).filter(Boolean);
 
 // when the page is loaded it will scroll to the right by the amount specified, in this case to the center pic as there are only
   useEffect(() => {
     const container = sliderRef.current;
-    container.scrollLeft = 1440; 
+    container.scrollLeft = window.innerWidth; 
   }, []);
 
-  //   allows the scroll left button to fully scroll to the right a full screen width
-    const scrollLeft = () => {     // If you push the scroll left button at image 1, it wont do nothing
-      if (selectedImage === 1) {
-        return; 
-      }
-    
-      const container = sliderRef.current;
-      if (container.scrollLeft > 0) {
-        container.scrollLeft -= scrollAmount;
-        setSelectedImage((prevSelectedImage) => prevSelectedImage - 1); 
-      }
-    };
+ // allows the scroll left button to fully scroll to the right a full screen width
+  const scrollLeft = () => {
+    const container = sliderRef.current;
+    if (selectedImage === 1) {
+      container.scrollLeft = scrollAmount * (images.length - 1);
+      setSelectedImage(images.length);
+    } else if (container.scrollLeft > 0) {
+      container.scrollLeft -= scrollAmount;
+      setSelectedImage((prevSelectedImage) => prevSelectedImage - 1);
+    }
+  };
 
-//   allows the scroll right button to fully scroll to the right a full screen width
-    const scrollRight = () => {    // If you push the scroll right button at image 3, it wont do nothing
-      if (selectedImage === 3) {
-        return; 
-      }
-
-      const container = sliderRef.current;
-      if (container.scrollLeft + container.offsetWidth < container.scrollWidth) {
-        container.scrollLeft += scrollAmount;
-        setSelectedImage((prevSelectedImage) => prevSelectedImage + 1); // Update the selected image
-      }
-    };
+  // allows the scroll right button to fully scroll to the right a full screen width
+  const scrollRight = () => {
+    const container = sliderRef.current;
+    if (selectedImage === images.length) {
+      container.scrollLeft = 0;
+      setSelectedImage(1);
+    } else if (container.scrollLeft + container.offsetWidth < container.scrollWidth) {
+      container.scrollLeft += scrollAmount;
+      setSelectedImage((prevSelectedImage) => prevSelectedImage + 1);
+    }
+  };
 
   return (
     <>
     <div>   
-        <h2 className = "FireSaleHead">Easter Fire Sale !</h2>
+        <h2 className = "fireSaleHead">Easter Fire Sale !</h2>
     </div>
       <div className="scrollBox">
         <button style = {{marginRight: "80px"}} className="nav-btn" onClick={scrollLeft}>
@@ -71,6 +68,7 @@ const ScrollBox = () => {
           <img src="/right.svg" alt="right arrow button" />
         </button>
       </div>
+      {/* Bar that highlights to show which Game of the Easter fire sale you are on by highlighting green */}
       <div className="bar-container">
         <div className={`barBox ${selectedImage === 1 ? 'active' : ''}`}></div>
         <div className={`barBox ${selectedImage === 2 ? 'active' : ''}`} ></div>

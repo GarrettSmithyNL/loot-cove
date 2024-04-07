@@ -12,7 +12,7 @@
 .App {
   width: 1440px;
   min-height: 1600px;
-  max-height: auto;
+  max-height: fit-content;
   margin: auto;
   background: linear-gradient(to bottom, #B1F4FC,#449FAF);
 
@@ -28,7 +28,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
- /* Nav Bar stylings  */
+
+/* Nav Bar stylings  */
 nav {
   display: flex;
   justify-content: space-between;
@@ -40,9 +41,10 @@ nav {
   padding-left: 75px;
 }
 
-#genre {
+.genre {
   font-size: 40px;
-  padding-left: 25px;
+  padding-left: 30px;
+  padding-top: 10px;
 }  
 
 .navBtns {
@@ -50,6 +52,21 @@ nav {
   justify-content: space-evenly;
   font-size: 20px;
   padding-right: 60px;
+}
+
+nav a:link {
+  text-decoration: none;
+  color: black;
+}
+
+nav a:visited {
+  text-decoration: none;
+  color: black;
+}
+
+nav a:hover {
+  text-decoration: none;
+  color: #449FAF;
 }
 
 .navBtns > div {
@@ -65,7 +82,7 @@ nav {
 }
 
 /* Styles for Scroll box stylings */
-.FireSaleHead {
+.fireSaleHead {
   font-size: 48px;
   text-align: center;
   margin-top: 50px;
@@ -81,15 +98,15 @@ nav {
 
 .fireSaleContainer {
   display: flex;
-  max-width:auto;
+  
   overflow: scroll;
   scroll-behavior: auto; /*set to auto because smooth seemed a bit choppy apon loading*/
   height: 450px;
+
   scrollbar-width: none; 
   -ms-overflow-style: none; 
-  align-self: center;
-}
 
+}
 
 .fireSaleImage {
   width: 1440px;
@@ -131,7 +148,174 @@ nav {
 .barBox.active {
   background-color: green;
 }
+ /* Stylings for the trending now component */
 
+.trendingHead {
+  font-size: 48px;
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 20px;
+}
 
+.trendingContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #F4D499;
+  border: solid 8px #835211;
+  border-radius: 16px;
+  width: 1190px;
+  height: 670px;
+  margin: auto;
+}
 
+/* biggest pic in the trending now component */
+.mainTrendGame {
+  justify-content: center;
+  display: flex;
+  margin-top: 50px;
+  width: 1030px;
+  height: 340px;
+}
 
+.mainTrendGame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: solid 5px black;
+  border-radius: 16px;
+}
+
+/* the row of 3 games in the trending component */
+
+.threeTrendGameBox {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+
+  width: 1030px;
+  height: 165px;
+}
+
+.threeTrendGameImages {
+  width: 300px;
+  height: 165px; 
+}
+
+.threeTrendGameImages img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: solid 5px black;
+  border-radius: 16px;
+}
+
+.mainTrendGame, .threeTrendGameImages {
+  position: relative;
+}
+
+/* set the font size for the biggest picture individually, instead of all 
+Because i did not want to effect the row of 3 smaller pics below it */
+.mainTrendGame .gameName,
+.mainTrendGame .gamePrice,
+.mainTrendGame .gameDev {
+  font-size: 36px;
+}
+
+.gameName {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  color: white;
+  padding: 10px;
+  border-radius: 16px;
+}
+
+.gamePrice {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5); 
+  color: white;
+  padding: 10px;
+  border-top-right-radius: 16px;
+  border-bottom-left-radius: 16px;
+}
+
+.gameDev {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5); 
+  color: white;
+  padding: 10px;
+  border-bottom-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+/* GameByGenre component stylings */
+
+.sort {
+  margin-top: 100px;
+  font-size: 40px;
+}
+
+.sortedGamesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 50px
+}
+
+.gamesImgContainer img {
+  width: 300px;
+  height: 165px;
+  object-fit: cover;
+  border: solid 5px black;
+  border-radius: 16px;
+  background: #835211;
+}
+
+.gamesImgContainer {
+  position: relative;
+  margin-bottom: 35px;
+}
+
+.sortedGamePrice {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding:10px;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 30px;
+  border-top-right-radius: 16px;
+}
+
+.sortedGameName {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding:10px;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 20px;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  margin-bottom: 10px;
+}
+
+.sortBtn {
+  cursor: pointer;
+  background-color:#F4D499 ;
+  border-radius: 16px;
+  border: solid 8px #835211;
+  height: 80px;
+  width: 300px;
+  font-size: 24px;
+  text-align: center;
+  margin-top: 20px;
+  font-weight: bold;
+}
