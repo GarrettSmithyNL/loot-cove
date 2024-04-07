@@ -3,7 +3,9 @@ import { useState, useEffect } from "react";
 import { getGameById, getGames } from "./data/api";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
-import HomePage from "./components/HomePage";
+import ScrollBox from "./components/ScrollBox";
+import TrendingNow from "./components/TrendingNow";
+import GamesByGenre from "./components/GamesByGenre";
 
 function App() {
   const games = getGames();
@@ -21,7 +23,10 @@ function App() {
             path="/"
             element={
               <div>
-               <HomePage />
+               <NavBar />
+               <ScrollBox />
+               <TrendingNow />
+               <GamesByGenre />
               </div>
               
              
