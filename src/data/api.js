@@ -131,11 +131,8 @@ const games = [
       "Resident Evil is a classic survival horror game that follows the story of characters battling against hordes of zombies and other terrifying creatures. With action-packed gameplay, puzzle-solving, and a gripping storyline, immerse yourself in the horrors of Raccoon City.",
     pictures: {
       thumbnail:
-<<<<<<< HEAD
-        "https://cdn.akamai.steamstatic.com/steam/apps/883710/header.jpg?t=1701395502",
-=======
         "https://s3.gaming-cdn.com/images/products/527/orig-fallback-v1/resident-evil-hd-pc-game-steam-europe-cover.jpg?v=1662470378",
->>>>>>> origin/master
+
       image1:
         "https://cdn.vox-cdn.com/uploads/chorus_asset/file/13695830/Resident_Evil_2_intro_0011_Layer_5.jpg",
       image2:
@@ -175,11 +172,7 @@ const games = [
       "Silent Hill is a psychological horror game known for its eerie atmosphere and gripping storytelling. Explore the haunted town of Silent Hill, solve puzzles, and encounter terrifying creatures in this iconic survival horror experience.",
     pictures: {
       thumbnail:
-<<<<<<< HEAD
-        "https://www.gamespot.com/a/uploads/original/1597/15971423/3979437-7091168428-39206.jpg",
-=======
         "https://www.slantmagazine.com/wp-content/uploads/2018/11/silenthill.jpg",
->>>>>>> origin/master
       image1:
         "https://preview.redd.it/what-makes-silent-hill-1-unique-from-the-rest-of-the-series-v0-u86j5pyom66c1.jpg?auto=webp&s=2299a6172bc6f015057adb14e24aea1124bc39f9",
       image2:

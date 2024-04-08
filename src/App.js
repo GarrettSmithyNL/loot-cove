@@ -1,14 +1,11 @@
 import "./App.css";
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-<<<<<<< HEAD
 import ShoppingCart from "./components/ShoppingCart";
-=======
 import NavBar from "./components/NavBar";
 import ScrollBox from "./components/ScrollBox";
 import TrendingNow from "./components/TrendingNow";
 import GamesByGenre from "./components/GamesByGenre";
->>>>>>> origin/master
 
 function App() {
   let [cartById, setCartById] = useState([4, 6, 4, 25, 1, 10, 21]);
@@ -26,10 +23,6 @@ function App() {
     setCartById(cartById);
   };
 
-
-
-
-
   return (
     <Router>
       <div className="App">
@@ -39,34 +32,24 @@ function App() {
             path="/"
             element={
               <div>
-<<<<<<< HEAD
-                <h1>Title: Garrett</h1>
-=======
-               <NavBar />
-               <ScrollBox />
-               <TrendingNow />
-               <GamesByGenre />
->>>>>>> origin/master
+                <NavBar />
+                <ScrollBox />
+                <TrendingNow />
+                <GamesByGenre />
               </div>
-              
-             
-             
             }
           ></Route>
           <Route
             path="/cart"
             element={
-<<<<<<< HEAD
-              <ShoppingCart
-                cartById={cartById}
-                onClick={removeGame}
-              />
-=======
               <div>
                 <h1>Title: {games[2].name}</h1>
                 <NavBar />
+                <ShoppingCart
+                  cartById={cartById}
+                  onClick={removeGame}
+                />
               </div>
->>>>>>> origin/master
             }
           ></Route>
         </Routes>
