@@ -1,6 +1,6 @@
 @font-face {
   font-family: "MyFont";
-  src: url("D:\TheRumIsGone-Wy1nG.ttf");
+  src: url("./fonts/TheRumIsGone-Wy1nG.ttf");
 }
 
 * {
@@ -317,7 +317,7 @@ Because i did not want to effect the row of 3 smaller pics below it */
   text-align: center;
   margin-top: 20px;
   font-weight: bold;
-
+}
   .cart {
     width: 700px;
 
@@ -438,4 +438,4 @@ Because i did not want to effect the row of 3 smaller pics below it */
     font-family: "pirate";
     cursor: pointer;
   }
-}
+

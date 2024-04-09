@@ -23,6 +23,8 @@ function App() {
     setCartById(cartById);
   };
 
+  
+
   return (
     <Router>
       <div className="App">
@@ -43,7 +45,7 @@ function App() {
             path="/cart"
             element={
               <div>
-                <h1>Title: {games[2].name}</h1>
+          
                 <NavBar />
                 <ShoppingCart
                   cartById={cartById}

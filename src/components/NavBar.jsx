@@ -37,7 +37,7 @@ const NavBar = () => {
               <div>
                 {/* Cart page link with associated icon */}
                 <img style = {{height: "55px" }} src="/cart.svg" alt="Shopping cart icon" />
-                <Link to = "/2">Cart</Link>
+                <Link to = "/cart">Cart</Link>
               </div>
               <div>
                 {/* Checkout page link with associated icon */}
