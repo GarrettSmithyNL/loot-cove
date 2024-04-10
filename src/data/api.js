@@ -1,4 +1,4 @@
-const games = [
+export const games = [
   {
     id: 1,
     name: "Dead by Daylight",
@@ -991,5 +991,6 @@ export const getGamesByIds = async (gameIds) => {
   gameIds.forEach((id) => {
     games.push(getGameById(id));
   });
+
   return games;
 };
