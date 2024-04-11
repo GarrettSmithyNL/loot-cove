@@ -355,6 +355,10 @@ Because i did not want to effect the row of 3 smaller pics below it */
 
 .cartHolder {
   display: flex;
+  max-width: fit-content;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .checkout {
@@ -628,3 +632,6 @@ Because i did not want to effect the row of 3 smaller pics below it */
   margin: 5px;
 }
 
+.cartHolder {
+  align-self: center;
+}
