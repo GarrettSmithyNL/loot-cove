@@ -21,7 +21,7 @@ body {
   font-family: "MyFont";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #b1fcb5;
+  background: linear-gradient(to bottom, #b1f4fc, #449faf);
 }
 
 code {
@@ -319,7 +319,7 @@ Because i did not want to effect the row of 3 smaller pics below it */
 }
 .cart {
   width: 700px;
-
+  
   background-color: #f4d499;
   border: 3px solid #835211;
   border-radius: 16px;

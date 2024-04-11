@@ -42,7 +42,7 @@ const NavBar = () => {
               <div>
                 {/* Checkout page link with associated icon */}
                 <img style = {{height: "55px"}}src="/checkout.svg" alt="checkout icon" />
-                <Link to = "/2">Checkout</Link>
+                <Link to = "/cart">Checkout</Link>
               </div>
             </div>
         </nav>

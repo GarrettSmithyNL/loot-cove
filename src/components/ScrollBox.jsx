@@ -44,6 +44,7 @@ const ScrollBox = () => {
   // Function to scroll to the left by a full screen width, will also loop back around to image 3 when at image 1 if the left arrow is clicked
   const scrollLeft = () => {
     const container = sliderRef.current;
+    const scrollAmount = window.innerWidth;
     if (selectedImage === 1) {
       container.scrollLeft = scrollAmount * (images.length - 1);
       setSelectedImage(images.length);
@@ -56,6 +57,7 @@ const ScrollBox = () => {
   // Function to scroll to the right by a full screen width, will also loop back around to image 1 when at image 3 if right arrow is clicked
   const scrollRight = () => {
     const container = sliderRef.current;
+    const scrollAmount = window.innerWidth;
     if (selectedImage === images.length) {
       container.scrollLeft = 0;
       setSelectedImage(1);

@@ -17,7 +17,7 @@ function App() {
         <ScrollToTop>
           <CartProvider>
             <div className="App">
-              <h1>Loot Cove</h1>
+      
               <Routes>
                 <Route
                   path="/"
