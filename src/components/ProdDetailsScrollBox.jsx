@@ -7,8 +7,8 @@ const ProdDetailsScrollBox = ({ gameId }) => {
   // Using the useRef hook to reference the slider container
   const sliderRef = useRef(null);
  
-  // Setting the scroll amount to the width of the window
-  const scrollAmount = window.innerWidth; 
+  // Setting the image width to 1380, will be used for scrollLeft and scrollRight
+  const imageWidth = 1380;
   
   // Initializing the selectedImage state to 1
   const [selectedImage, setSelectedImage] = useState(1); 
@@ -42,8 +42,9 @@ const ProdDetailsScrollBox = ({ gameId }) => {
   // Function to scroll to the left by a full screen width, will also loop back around to image 3 when at image 1 if the left arrow is clicked
   const scrollLeft = () => {
     const container = sliderRef.current;
+    const scrollAmount = imageWidth;
     if (selectedImage === 1) {
-      container.scrollLeft = scrollAmount * (images.length - 1);
+      container.scrollLeft = imageWidth * (images.length - 1);
       setSelectedImage(images.length);
     } else if (container.scrollLeft > 0) {
       container.scrollLeft -= scrollAmount;
@@ -54,6 +55,7 @@ const ProdDetailsScrollBox = ({ gameId }) => {
   // Function to scroll to the right by a full screen width, will also loop back around to image 1 when at image 3 if right arrow is clicked
   const scrollRight = () => {
     const container = sliderRef.current;
+    const scrollAmount = imageWidth;
     if (selectedImage === images.length) {
       container.scrollLeft = 0;
       setSelectedImage(1);

@@ -11,10 +11,9 @@
 
 .App {
   width: 1440px;
-  min-height: 1600px;
+  min-height: 2000px;
   max-height: fit-content;
   margin: auto;
-  background: linear-gradient(to bottom, #b1f4fc, #449faf);
 }
 body {
   margin: 0;
@@ -100,14 +99,17 @@ nav a:hover {
   overflow: hidden;
   scroll-behavior: auto; /*set to auto because smooth seemed a bit choppy upon loading*/
   height: 450px;
-
   scrollbar-width: none;
   -ms-overflow-style: none;
+  margin: -20px;
+  border-radius: 24px;
+  border: solid 8px black;
 }
 
 .fireSaleImage {
-  width: 1440px;
+  width: 1370px;
   height: 450px;
+
 }
 
 .nav-btn {

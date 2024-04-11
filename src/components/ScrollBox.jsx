@@ -12,17 +12,20 @@ import { getGameById } from '../data/api.js';
 
 const ScrollBox = () => {
   
+  // Setting the image width to 1380, will be used for scrollLeft and scrollRight
+  const imageWidth = 1380;
+
   // Using the useRef hook to reference the slider container
   const sliderRef = useRef(null);
  
-  // Setting the scroll amount to the width of the window
-  const scrollAmount = window.innerWidth; 
+
   
   // Initializing the selectedImage state to 2
   const [selectedImage, setSelectedImage] = useState(2); 
   
   // Specifying 3 game ids to display images for our Easter Fire Sale.
   const gameIds = [5, 25, 15]; 
+  
   
   // Mapping over the gameIds to get the corresponding game data and image url
   const images = gameIds.map((gameId) => {
@@ -44,7 +47,7 @@ const ScrollBox = () => {
   // Function to scroll to the left by a full screen width, will also loop back around to image 3 when at image 1 if the left arrow is clicked
   const scrollLeft = () => {
     const container = sliderRef.current;
-    const scrollAmount = window.innerWidth;
+    const scrollAmount = imageWidth;
     if (selectedImage === 1) {
       container.scrollLeft = scrollAmount * (images.length - 1);
       setSelectedImage(images.length);
@@ -57,9 +60,9 @@ const ScrollBox = () => {
   // Function to scroll to the right by a full screen width, will also loop back around to image 1 when at image 3 if right arrow is clicked
   const scrollRight = () => {
     const container = sliderRef.current;
-    const scrollAmount = window.innerWidth;
+    const scrollAmount = imageWidth;
     if (selectedImage === images.length) {
-      container.scrollLeft = 0;
+      container.scrollLeft = 1;
       setSelectedImage(1);
     } else if (container.scrollLeft + container.offsetWidth < container.scrollWidth) {
       container.scrollLeft += scrollAmount;
@@ -87,7 +90,7 @@ const ScrollBox = () => {
           {/* Mapping over the images array and rending each one into a div based off of their key(id) and
           useing the given url for the image rendered which was the thumbnail as specified above  */}
           {images.map((image, index) => (
-            <div key={index} className = "fireSaleImageContainer">
+            <div key={index}>
               <img className="fireSaleImage" src={image.url} alt="Fire Sale Game" />
             </div>
           ))}
