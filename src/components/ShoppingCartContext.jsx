@@ -4,8 +4,9 @@ import { useCart } from "../context/cart";
 const ShoppingCartContext = () => {
   const { cart } = useCart();
 
+  //Thji
   const total = cart.reduce((acc, game) => {
-    acc += +game.price;
+    acc += game.price;
     return acc;
   }, 0);
 
